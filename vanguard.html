@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vanguard 25 BMS | Shubhroto S. Mohanto</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    /* Paste your global CSS variables and reset rules here from index.html */
+    :root {
+      --bg: #faf9f7;
+      --surface: #ffffff;
+      --border: #e2deda;
+      --text: #1a1916;
+      --muted: #6b7280;
+      --accent: #2563eb; 
+      --serif: 'Lora', Georgia, serif;
+      --sans: 'DM Sans', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: var(--sans); font-weight: 300; line-height: 1.8; }
+    
+    /* NAV (Same as index) */
+    nav { position: sticky; top: 0; z-index: 50; background: rgba(250,249,247,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); padding: 1rem 0; }
+    nav .wrap { max-width: 960px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
+    .nav-name { font-family: var(--serif); font-size: 1.05rem; font-weight: 500; color: var(--text); text-decoration: none; }
+    .nav-links a { font-size: 0.85rem; font-weight: 500; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent); }
+
+    /* CASE STUDY ARTICLE STYLES */
+    .article-wrap {
+      max-width: 720px; /* Narrower width for easier reading */
+      margin: 0 auto;
+      padding: 6rem 2rem;
+    }
+    
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-decoration: none;
+      margin-bottom: 3rem;
+    }
+    .back-link:hover { text-decoration: underline; }
+
+    .cs-title { font-family: var(--serif); font-size: 3rem; line-height: 1.2; margin-bottom: 1rem; color: var(--text); }
+    .cs-subtitle { font-size: 1.2rem; color: var(--muted); margin-bottom: 3rem; }
+    
+    .cs-hero-img {
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      margin-bottom: 4rem;
+    }
+
+    .article-wrap h2 {
+      font-family: var(--serif);
+      font-size: 1.8rem;
+      margin: 3rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .article-wrap p { margin-bottom: 1.5rem; }
+    
+    .bom-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .bom-table th, .bom-table td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    .bom-table th { background: var(--bg); font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    
+    /* Footer */
+    footer { border-top: 1px solid var(--border); padding: 3rem 0; text-align: center; font-size: 0.85rem; color: var(--muted); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="index.html" class="nav-name">Shubhroto S. Mohanto</a>
+    <div class="nav-links">
+      <a href="index.html">← Back to Portfolio</a>
+    </div>
+  </div>
+</nav>
+
+<main class="article-wrap">
+  <a href="index.html" class="back-link">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+    Back to Home
+  </a>
+
+  <h1 class="cs-title">Vanguard 25</h1>
+  <p class="cs-subtitle">Designing a 5S 25A Battery Management System from the ground up.</p>
+
+  <img src="assets/Vanguard.png" alt="Vanguard 25 PCB" class="cs-hero-img">
+
+  <h2>The Challenge</h2>
+  <p>Standard off-the-shelf BMS modules often lack the specific thermal dissipation characteristics and form-factor requirements needed for custom robotics or hybrid energy storage setups. The goal of Vanguard 25 was to design a robust 5-series (5S) lithium-ion battery management system capable of sustaining a continuous 25A draw without thermal throttling.</p>
+
+  <h2>Architecture & Iteration</h2>
+  <p>The core of the design revolves around balancing cell voltages while providing strict over-current, over-voltage, and under-voltage protection. During the initial schematic phase, trace width for the high-current paths was a major consideration.</p>
+  <p>Instead of relying purely on copper pours, I calculated the required widths and reinforced the critical paths to ensure the resistance remained low enough to prevent catastrophic heating under full load.</p>
+
+  <h2>Bill of Materials Highlights</h2>
+  <table class="bom-table">
+    <thead>
+      <tr>
+        <th>Component Type</th>
+        <th>Selection / Rationale</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Protection IC</strong></td>
+        <td>[Insert IC Name] — Chosen for its precise overcharge detection and minimal quiescent current.</td>
+      </tr>
+      <tr>
+        <td><strong>MOSFETs</strong></td>
+        <td>[Insert MOSFET Model] — Selected for low R_DS(on) to minimize heat generation during the 25A continuous discharge.</td>
+      </tr>
+      <tr>
+        <td><strong>Shunt Resistor</strong></td>
+        <td>High-precision, low-inductance alloy resistor for accurate current sensing.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Outcome & Next Steps</h2>
+  <p>The Vanguard 25 successfully validates the PCB layout and protection logic. The next phase involves physical load testing and thermal imaging to verify the simulation models against real-world performance.</p>
+</main>
+
+<footer>
+  Shubhroto S. Mohanto &copy; 2026
+</footer>
+
+</body>
+</html>

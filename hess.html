@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Predictive HESS | Shubhroto S. Mohanto</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg: #faf9f7;
+      --surface: #ffffff;
+      --border: #e2deda;
+      --text: #1a1916;
+      --muted: #6b7280;
+      --accent: #2563eb; 
+      --serif: 'Lora', Georgia, serif;
+      --sans: 'DM Sans', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: var(--sans); font-weight: 300; line-height: 1.8; }
+    
+    /* WIDENED WRAPPER (To match index.html) */
+    .wrap { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+    /* NAV */
+    nav { position: sticky; top: 0; z-index: 50; background: rgba(250,249,247,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); padding: 1rem 0; }
+    nav .wrap { display: flex; justify-content: space-between; align-items: center; }
+    .nav-name { font-family: var(--serif); font-size: 1.05rem; font-weight: 500; color: var(--text); text-decoration: none; }
+    .nav-links a { font-size: 0.85rem; font-weight: 500; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent); }
+
+    /* CASE STUDY ARTICLE STYLES */
+    /* The article wrap stays narrower (800px) because reading long text spanning 1200px hurts readability */
+    .article-wrap { max-width: 800px; margin: 0 auto; padding: 6rem 2rem; }
+    
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-decoration: none;
+      margin-bottom: 3rem;
+    }
+    .back-link:hover { text-decoration: underline; }
+
+    .cs-title { font-family: var(--serif); font-size: 3rem; line-height: 1.2; margin-bottom: 1rem; color: var(--text); }
+    .cs-subtitle { font-size: 1.2rem; color: var(--muted); margin-bottom: 3rem; }
+    
+    .cs-hero-img { 
+      width: 100%; 
+      border-radius: 8px; 
+      border: 1px solid var(--border); 
+      margin-bottom: 4rem; 
+      box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    }
+
+    .article-wrap h2 {
+      font-family: var(--serif);
+      font-size: 1.8rem;
+      margin: 3rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .article-wrap p { margin-bottom: 1.5rem; }
+    .article-wrap ul { margin-bottom: 1.5rem; padding-left: 1.5rem; }
+    .article-wrap li { margin-bottom: 0.5rem; }
+    
+    /* Footer */
+    footer { border-top: 1px solid var(--border); padding: 3rem 0; text-align: center; font-size: 0.85rem; color: var(--muted); margin-top: 4rem;}
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="index.html" class="nav-name">Shubhroto S. Mohanto</a>
+    <div class="nav-links">
+      <a href="index.html">← Back to Portfolio</a>
+    </div>
+  </div>
+</nav>
+
+<main class="article-wrap">
+  <a href="index.html" class="back-link">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+    Back to Home
+  </a>
+
+  <h1 class="cs-title">Predictive HESS</h1>
+  <p class="cs-subtitle">Developing a custom proprietary Hybrid Energy Storage Architecture utilizing predictive control logic.</p>
+
+  <img src="assets/HESS.png" alt="Predictive HESS Simulation Architecture" class="cs-hero-img">
+
+  <h2>The Concept</h2>
+  <p>Modern high-performance power systems frequently encounter a fundamental trade-off: high energy density (batteries) versus high power density (supercapacitors). Subjecting a lithium-ion battery pack to massive, instantaneous current transients severely degrades its lifespan and thermal stability.</p>
+  <p>This project explores a Hybrid Energy Storage System (HESS) that actively manages the power split between a battery bank and a supercapacitor module. By routing high-frequency, high-current transients to the supercapacitors, the system shields the primary battery pack, drastically improving overall cycle life and thermal safety.</p>
+
+  <h2>Simulation & Architecture</h2>
+  <p>Rather than relying on simple passive filtering or basic rule-based logic, this architecture utilizes predictive analysis to anticipate load demands. The core components of the simulation involve:</p>
+  <ul>
+    <li><strong>Bi-directional DC-DC Converters:</strong> Regulating the power flow between the distinct voltage levels of the battery and supercapacitor banks to the common DC bus.</li>
+    <li><strong>Predictive Power Management:</strong> Algorithms designed to forecast sudden power spikes based on load profiles, pre-emptively engaging the supercapacitors to handle the brunt of the transient load.</li>
+    <li><strong>Thermal & Stress Mitigation:</strong> Using Ansys to simulate the thermal dissipation reductions on the battery pack when the HESS logic is active.</li>
+  </ul>
+
+  <h2>Current Status & Next Steps</h2>
+  <p>The system logic and power electronics topology are currently undergoing rigorous simulation. The immediate next phase involves finalizing the predictive control algorithms in software before transitioning to a scaled-down hardware prototype to validate the efficiency gains physically.</p>
+</main>
+
+<footer>
+  Shubhroto S. Mohanto &copy; 2026
+</footer>
+
+</body>
+</html>

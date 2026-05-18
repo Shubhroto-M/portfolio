@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | Shubhroto S. Mohanto</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg: #faf9f7;
+      --surface: #ffffff;
+      --border: #e2deda;
+      --text: #1a1916;
+      --muted: #6b7280;
+      --accent: #2563eb; 
+      --accent-hover: #1d4ed8;
+      --accent-light: #eff6ff;
+      --serif: 'Lora', Georgia, serif;
+      --sans: 'DM Sans', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: var(--sans); font-weight: 300; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    
+    .wrap { max-width: 960px; margin: 0 auto; padding: 0 2rem; }
+
+    /* NAV */
+    nav { position: sticky; top: 0; z-index: 50; background: rgba(250,249,247,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); padding: 1rem 0; }
+    nav .wrap { display: flex; justify-content: space-between; align-items: center; }
+    .nav-name { font-family: var(--serif); font-size: 1.05rem; font-weight: 500; color: var(--text); text-decoration: none; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 0.85rem; font-weight: 500; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+
+    /* CONTACT SECTION */
+    .contact-container { padding: 6rem 0; display: grid; grid-template-columns: 1fr 1.5fr; gap: 4rem; }
+    @media (max-width: 768px) { .contact-container { grid-template-columns: 1fr; gap: 3rem; } nav .wrap { flex-direction: column; align-items: flex-start; gap: 1rem; } .nav-links { flex-wrap: wrap; gap: 1rem; } }
+
+    .contact-info h1 { font-family: var(--serif); font-size: 3rem; font-weight: 400; line-height: 1.15; color: var(--text); margin-bottom: 1rem; }
+    .contact-info p { color: var(--muted); margin-bottom: 2.5rem; font-size: 1.05rem; }
+
+    .info-list { display: flex; flex-direction: column; gap: 1.2rem; }
+    .info-item { display: flex; align-items: center; gap: 1rem; color: var(--text); font-weight: 500; text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+    .info-item svg { color: var(--accent); }
+    .info-item:hover { color: var(--accent); }
+
+    /* FORM STYLES */
+    .contact-form { background: var(--surface); padding: 2.5rem; border: 1px solid var(--border); border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.02); }
+    .form-group { margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem; }
+    .form-group label { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
+    .form-group input, .form-group textarea { font-family: var(--sans); font-size: 1rem; padding: 0.8rem 1rem; border: 1px solid var(--border); border-radius: 4px; background: var(--bg); color: var(--text); transition: border-color 0.2s, box-shadow 0.2s; }
+    .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-light); }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    
+    .btn-submit { display: inline-flex; justify-content: center; align-items: center; width: 100%; padding: 0.8rem; font-family: var(--sans); font-size: 1rem; font-weight: 500; color: var(--surface); background: var(--accent); border: none; border-radius: 4px; cursor: pointer; transition: background 0.2s; }
+    .btn-submit:hover { background: var(--accent-hover); }
+
+    /* FOOTER */
+    footer { padding: 3rem 0; border-top: 1px solid var(--border); margin-top: auto; }
+    footer .wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .footer-left { font-size: 0.85rem; font-weight: 500; color: var(--text); }
+    .footer-right { font-size: 0.8rem; color: var(--muted); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="index.html" class="nav-name">Shubhroto S. Mohanto</a>
+    <ul class="nav-links">
+      <li><a href="index.html#now">Now</a></li>
+      <li><a href="index.html#skills">Skills</a></li>
+      <li><a href="index.html#projects">Work</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="wrap">
+  <div class="contact-container">
+    
+    <div class="contact-info">
+      <h1>Get in touch</h1>
+      <p>I'm currently exploring opportunities in hardware engineering, PCB design, and power electronics. Feel free to reach out for collaborations or inquiries.</p>
+      
+      <div class="info-list">
+        <a href="mailto:shubhrotomohanto@gmail.com" class="info-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          shubhrotomohanto@gmail.com
+        </a>
+        <a href="tel:+919112370691" class="info-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.47 2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.88-.88a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          +91 91123 70691
+        </a>
+        <a href="https://www.linkedin.com/in/shubhroto-mohanto" target="_blank" class="info-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn Profile
+        </a>
+        <a href="https://github.com/Shubhroto-M" target="_blank" class="info-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+          GitHub Portfolio
+        </a>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <form action="https://formspree.io/f/mlgveaag" method="POST">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required placeholder="Jane Doe">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="jane@example.com">
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required placeholder="Hello Shubhroto..."></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Send Message</button>
+      </form>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-left">Shubhroto S. Mohanto &nbsp;·&nbsp; BIT Bengaluru</div>
+    <div class="footer-right">B.E. Electrical & Electronics Engineering</div>
+  </div>
+</footer>
+
+</body>
+</html>
